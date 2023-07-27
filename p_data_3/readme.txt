@@ -1,1 +1,0 @@
-run dataProcessing_t.py and get the temp data.
