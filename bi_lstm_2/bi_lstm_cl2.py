@@ -18,11 +18,11 @@ import seaborn as sns
 
 
 
-data = pd.read_csv("../data/financial_data.csv")
+data = pd.read_csv("../data/threads1.csv")
 data.shape
 
 def clean_train_data(x):
-    text = x
+    text = str(x)  # ensure x is str
     text = text.lower()
     text = re.sub(r'\s+', ' ', text)
     text = re.sub('\[.*?\]', '', text) # remove square brackets
@@ -31,31 +31,20 @@ def clean_train_data(x):
     text = re.sub('\n', '', text)
     return text
 
-data['Sentence'] = data.Sentence.apply(lambda x : clean_train_data(x))
-data = data[data['Sentiment'] != 'neutral']
-print(data['Sentence'])
+data['review'] = data.review.apply(lambda x : clean_train_data(x))
+data = data[data['sentiment'] != 'neutral']
+
+print(data['review'])
 max_features = 2000
 token = Tokenizer(num_words=max_features, split = ' ')
-token.fit_on_texts(data['Sentence'].values)
+token.fit_on_texts(data['review'].values)
 
-X = token.texts_to_sequences(data['Sentence'].values)
+X = token.texts_to_sequences(data['review'].values)
 X = pad_sequences(X)
-Y = pd.get_dummies(data['Sentiment']).values
-
-# Train Word2Vec embeddings
-word2vec_embedding_dim = 128 # Set the desired embedding dimension
-word2vec_model = Word2Vec(sentences=[text.split() for text in data['Sentence'].values],
-                          vector_size=word2vec_embedding_dim, window=3, min_count=1, workers=4)
-
-
-# Create embedding matrix
-embedding_matrix = np.zeros((max_features, word2vec_embedding_dim))
-for word, i in token.word_index.items():
-    if word in word2vec_model.wv and i < max_features:
-        embedding_matrix[i] = word2vec_model.wv[word]
+Y = pd.get_dummies(data['sentiment']).values
 
 # Model architecture
-embed_dim = word2vec_embedding_dim # Use Word2Vec embedding dimension
+embed_dim = 128 # Use Word2Vec embedding dimension
 lstm_out = 196
 batch_size = 32
 
@@ -76,7 +65,7 @@ for train_index, test_index in kf.split(X):
 
 # Re-compile the model with L2 regularization
 model = Sequential()
-model.add(Embedding(max_features, embed_dim, weights=[embedding_matrix], input_length=X.shape[1], trainable=True))
+model.add(Embedding(max_features, embed_dim, input_length=X.shape[1]))
 model.add(SpatialDropout1D(0.4))
 model.add(Bidirectional(LSTM(lstm_out, dropout=0.2, recurrent_dropout=0.2, kernel_regularizer=l2(0.01))))  # Add L2 regularization to the LSTM layer
 model.add(Dense(2, activation='softmax'))
@@ -130,3 +119,56 @@ plt.xlabel('Predicted Label')
 plt.ylabel('True Label')
 plt.title('Overall Confusion Matrix')
 plt.show()
+
+
+# 150/150 - 53s - loss: 1.3200 - accuracy: 0.6660 - val_loss: 0.4821 - val_accuracy: 0.8133 - 53s/epoch - 356ms/step
+# Epoch 2/50
+# 150/150 - 63s - loss: 0.4780 - accuracy: 0.8200 - val_loss: 0.4208 - val_accuracy: 0.8492 - 63s/epoch - 422ms/step
+# Epoch 3/50
+# 150/150 - 63s - loss: 0.3440 - accuracy: 0.8823 - val_loss: 0.3597 - val_accuracy: 0.8683 - 63s/epoch - 423ms/step
+# Epoch 4/50
+# 150/150 - 63s - loss: 0.2993 - accuracy: 0.8929 - val_loss: 0.3529 - val_accuracy: 0.8683 - 63s/epoch - 417ms/step
+# Epoch 5/50
+# 150/150 - 64s - loss: 0.2750 - accuracy: 0.9073 - val_loss: 0.3640 - val_accuracy: 0.8608 - 64s/epoch - 427ms/step
+# Epoch 6/50
+# 150/150 - 64s - loss: 0.2540 - accuracy: 0.9173 - val_loss: 0.3466 - val_accuracy: 0.8700 - 64s/epoch - 424ms/step
+# Epoch 7/50
+# 150/150 - 63s - loss: 0.2312 - accuracy: 0.9219 - val_loss: 0.3677 - val_accuracy: 0.8650 - 63s/epoch - 421ms/step
+# Epoch 8/50
+# 150/150 - 63s - loss: 0.2146 - accuracy: 0.9312 - val_loss: 0.3816 - val_accuracy: 0.8467 - 63s/epoch - 423ms/step
+# Epoch 9/50
+# 150/150 - 62s - loss: 0.2350 - accuracy: 0.9231 - val_loss: 0.3627 - val_accuracy: 0.8775 - 62s/epoch - 417ms/step
+# 38/38 - 2s - loss: 0.3627 - accuracy: 0.8775 - 2s/epoch - 56ms/step
+# 38/38 [==============================] - 2s 48ms/step
+# Average score: 0.3627375662326813
+# Average accuracy: 0.8774999976158142
+# Confusion Matrix (Fold 1):
+# [[567  65]
+#  [ 82 486]]
+#
+# Classification Report (Fold 1):
+#               precision    recall  f1-score   support
+#
+#     negative       0.87      0.90      0.89       632
+#     positive       0.88      0.86      0.87       568
+#
+#     accuracy                           0.88      1200
+#    macro avg       0.88      0.88      0.88      1200
+# weighted avg       0.88      0.88      0.88      1200
+#
+#
+# Overall Confusion Matrix:
+#  [[567  65]
+#  [ 82 486]]
+# Overall Classification Report:
+#                precision    recall  f1-score   support
+#
+#     negative       0.87      0.90      0.89       632
+#     positive       0.88      0.86      0.87       568
+#
+#     accuracy                           0.88      1200
+#    macro avg       0.88      0.88      0.88      1200
+# weighted avg       0.88      0.88      0.88      1200
+#
+#
+# Process finished with exit code 0
