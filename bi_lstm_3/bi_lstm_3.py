@@ -9,7 +9,7 @@ from keras.models import Sequential
 from keras.layers import Dense, Embedding, LSTM, SpatialDropout1D
 from sklearn.model_selection import train_test_split
 from keras.callbacks import EarlyStopping, ModelCheckpoint
-from keras.layers import Bidirectional
+from keras.src.layers import Bidirectional
 from gensim.models import Word2Vec
 from keras.regularizers import l2
 from sklearn.metrics import confusion_matrix, classification_report
@@ -154,3 +154,90 @@ plt.xlabel('Predicted Label')
 plt.ylabel('True Label')
 plt.title('Overall Confusion Matrix')
 plt.show()
+
+
+def predict_sentiment(text):
+    # Clean the text
+    text = clean_train_data(text)
+
+    # Tokenize the text
+    sequences = token.texts_to_sequences([text])
+    sequences = pad_sequences(sequences, maxlen=X.shape[1])
+
+    # Predict the sentiment
+    prediction = model.predict(sequences)
+
+    # Convert the prediction into a readable form
+    sentiment = np.argmax(prediction)
+    sentiment_dict = {0: 'negative', 1: 'neutral', 2: 'positive'}
+
+    print('The sentiment of the text is', sentiment_dict[sentiment])
+
+
+# Now use this function to predict the sentiment of a new text
+new_text = "I am very happy with the service!"  # Replace with your text
+predict_sentiment(new_text)
+
+# 684/684 - 37s - loss: 0.7659 - accuracy: 0.6597 - val_loss: 0.5798 - val_accuracy: 0.7588 - 37s/epoch - 54ms/step
+# Epoch 2/25
+# 684/684 - 35s - loss: 0.5300 - accuracy: 0.7858 - val_loss: 0.4678 - val_accuracy: 0.8150 - 35s/epoch - 52ms/step
+# Epoch 3/25
+# 684/684 - 36s - loss: 0.4155 - accuracy: 0.8362 - val_loss: 0.3927 - val_accuracy: 0.8523 - 36s/epoch - 52ms/step
+# Epoch 4/25
+# 684/684 - 36s - loss: 0.3484 - accuracy: 0.8655 - val_loss: 0.3607 - val_accuracy: 0.8658 - 36s/epoch - 53ms/step
+# Epoch 5/25
+# 684/684 - 37s - loss: 0.3009 - accuracy: 0.8854 - val_loss: 0.3453 - val_accuracy: 0.8751 - 37s/epoch - 55ms/step
+# Epoch 6/25
+# 684/684 - 36s - loss: 0.2587 - accuracy: 0.9040 - val_loss: 0.3194 - val_accuracy: 0.8885 - 36s/epoch - 53ms/step
+# Epoch 7/25
+# 684/684 - 38s - loss: 0.2292 - accuracy: 0.9164 - val_loss: 0.3176 - val_accuracy: 0.9002 - 38s/epoch - 55ms/step
+# Epoch 8/25
+# 684/684 - 38s - loss: 0.2046 - accuracy: 0.9273 - val_loss: 0.3126 - val_accuracy: 0.9009 - 38s/epoch - 55ms/step
+# Epoch 9/25
+# 684/684 - 38s - loss: 0.1769 - accuracy: 0.9374 - val_loss: 0.2992 - val_accuracy: 0.9100 - 38s/epoch - 55ms/step
+# Epoch 10/25
+# 684/684 - 37s - loss: 0.1574 - accuracy: 0.9440 - val_loss: 0.2728 - val_accuracy: 0.9206 - 37s/epoch - 54ms/step
+# Epoch 11/25
+# 684/684 - 37s - loss: 0.1404 - accuracy: 0.9518 - val_loss: 0.2943 - val_accuracy: 0.9210 - 37s/epoch - 54ms/step
+# Epoch 12/25
+# 684/684 - 38s - loss: 0.1222 - accuracy: 0.9564 - val_loss: 0.2930 - val_accuracy: 0.9210 - 38s/epoch - 55ms/step
+# Epoch 13/25
+# 684/684 - 37s - loss: 0.1120 - accuracy: 0.9605 - val_loss: 0.2929 - val_accuracy: 0.9278 - 37s/epoch - 54ms/step
+# 171/171 - 3s - loss: 0.2929 - accuracy: 0.9278 - 3s/epoch - 20ms/step
+# 171/171 [==============================] - 2s 13ms/step
+# Average score: 0.29285070300102234
+# Average accuracy: 0.9277747273445129
+# Confusion Matrix (Fold 1):
+# [[1526  181   84]
+#  [  46 1745   35]
+#  [  23   26 1803]]
+#
+# Classification Report (Fold 1):
+#               precision    recall  f1-score   support
+#
+#     negative       0.96      0.85      0.90      1791
+#      neutral       0.89      0.96      0.92      1826
+#     positive       0.94      0.97      0.96      1852
+#
+#     accuracy                           0.93      5469
+#    macro avg       0.93      0.93      0.93      5469
+# weighted avg       0.93      0.93      0.93      5469
+#
+#
+# Overall Confusion Matrix:
+#  [[1526  181   84]
+#  [  46 1745   35]
+#  [  23   26 1803]]
+# Overall Classification Report:
+#                precision    recall  f1-score   support
+#
+#     negative       0.96      0.85      0.90      1791
+#      neutral       0.89      0.96      0.92      1826
+#     positive       0.94      0.97      0.96      1852
+#
+#     accuracy                           0.93      5469
+#    macro avg       0.93      0.93      0.93      5469
+# weighted avg       0.93      0.93      0.93      5469
+#
+# 1/1 [==============================] - 0s 11ms/step
+# The sentiment of the text is positive
