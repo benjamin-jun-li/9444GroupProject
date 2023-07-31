@@ -121,3 +121,47 @@ plt.xlabel('Predicted Label')
 plt.ylabel('True Label')
 plt.title('Overall Confusion Matrix')
 plt.show()
+
+# Epoch 1/50
+# 150/150 - 23s - loss: 0.7573 - accuracy: 0.7252 - val_loss: 0.3769 - val_accuracy: 0.8608 - 23s/epoch - 154ms/step
+# Epoch 2/50
+# 150/150 - 23s - loss: 0.3222 - accuracy: 0.8875 - val_loss: 0.3681 - val_accuracy: 0.8617 - 23s/epoch - 152ms/step
+# Epoch 3/50
+# 150/150 - 23s - loss: 0.2567 - accuracy: 0.9133 - val_loss: 0.3591 - val_accuracy: 0.8808 - 23s/epoch - 156ms/step
+# Epoch 4/50
+# 150/150 - 23s - loss: 0.2091 - accuracy: 0.9300 - val_loss: 0.4021 - val_accuracy: 0.8483 - 23s/epoch - 154ms/step
+# Epoch 5/50
+# 150/150 - 23s - loss: 0.1699 - accuracy: 0.9458 - val_loss: 0.4226 - val_accuracy: 0.8675 - 23s/epoch - 154ms/step
+# Epoch 6/50
+# 150/150 - 24s - loss: 0.1340 - accuracy: 0.9590 - val_loss: 0.4389 - val_accuracy: 0.8717 - 24s/epoch - 158ms/step
+# 38/38 - 1s - loss: 0.4389 - accuracy: 0.8717 - 1s/epoch - 35ms/step
+# 38/38 [==============================] - 1s 33ms/step
+# Average score: 0.4389059543609619
+# Average accuracy: 0.871666669845581
+# Confusion Matrix (Fold 1):
+# [[585  73]
+#  [ 81 461]]
+# 
+# Classification Report (Fold 1):
+#               precision    recall  f1-score   support
+# 
+#     negative       0.88      0.89      0.88       658
+#     positive       0.86      0.85      0.86       542
+# 
+#     accuracy                           0.87      1200
+#    macro avg       0.87      0.87      0.87      1200
+# weighted avg       0.87      0.87      0.87      1200
+# 
+# 
+# Overall Confusion Matrix:
+#  [[585  73]
+#  [ 81 461]]
+# Overall Classification Report:
+#                precision    recall  f1-score   support
+# 
+#     negative       0.88      0.89      0.88       658
+#     positive       0.86      0.85      0.86       542
+# 
+#     accuracy                           0.87      1200
+#    macro avg       0.87      0.87      0.87      1200
+# weighted avg       0.87      0.87      0.87      1200
