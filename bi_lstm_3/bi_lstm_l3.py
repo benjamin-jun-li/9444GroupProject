@@ -153,3 +153,86 @@ plt.xlabel('Predicted Label')
 plt.ylabel('True Label')
 plt.title('Overall Confusion Matrix')
 plt.show()
+
+# 684/684 - 38s - loss: 1.0973 - accuracy: 0.6288 - val_loss: 0.7020 - val_accuracy: 0.7407 - 38s/epoch - 55ms/step
+# Epoch 2/50
+# 684/684 - 36s - loss: 0.6880 - accuracy: 0.7463 - val_loss: 0.6039 - val_accuracy: 0.7822 - 36s/epoch - 53ms/step
+# Epoch 3/50
+# 684/684 - 37s - loss: 0.5793 - accuracy: 0.7966 - val_loss: 0.5351 - val_accuracy: 0.8133 - 37s/epoch - 55ms/step
+# Epoch 4/50
+# 684/684 - 38s - loss: 0.5123 - accuracy: 0.8270 - val_loss: 0.4918 - val_accuracy: 0.8320 - 38s/epoch - 55ms/step
+# Epoch 5/50
+# 684/684 - 38s - loss: 0.4701 - accuracy: 0.8438 - val_loss: 0.4784 - val_accuracy: 0.8431 - 38s/epoch - 56ms/step
+# Epoch 6/50
+# 684/684 - 38s - loss: 0.4420 - accuracy: 0.8542 - val_loss: 0.4722 - val_accuracy: 0.8406 - 38s/epoch - 55ms/step
+# Epoch 7/50
+# 684/684 - 37s - loss: 0.4234 - accuracy: 0.8590 - val_loss: 0.4439 - val_accuracy: 0.8513 - 37s/epoch - 54ms/step
+# Epoch 8/50
+# 684/684 - 37s - loss: 0.4010 - accuracy: 0.8697 - val_loss: 0.4442 - val_accuracy: 0.8587 - 37s/epoch - 54ms/step
+# Epoch 9/50
+# 684/684 - 37s - loss: 0.3881 - accuracy: 0.8737 - val_loss: 0.4305 - val_accuracy: 0.8673 - 37s/epoch - 54ms/step
+# Epoch 10/50
+# 684/684 - 37s - loss: 0.3740 - accuracy: 0.8785 - val_loss: 0.4291 - val_accuracy: 0.8663 - 37s/epoch - 54ms/step
+# Epoch 11/50
+# 684/684 - 37s - loss: 0.3589 - accuracy: 0.8868 - val_loss: 0.4230 - val_accuracy: 0.8691 - 37s/epoch - 54ms/step
+# Epoch 12/50
+# 684/684 - 37s - loss: 0.3495 - accuracy: 0.8894 - val_loss: 0.4136 - val_accuracy: 0.8724 - 37s/epoch - 54ms/step
+# Epoch 13/50
+# 684/684 - 36s - loss: 0.3410 - accuracy: 0.8918 - val_loss: 0.4144 - val_accuracy: 0.8738 - 36s/epoch - 53ms/step
+# Epoch 14/50
+# 684/684 - 36s - loss: 0.3292 - accuracy: 0.8961 - val_loss: 0.4088 - val_accuracy: 0.8758 - 36s/epoch - 53ms/step
+# Epoch 15/50
+# 684/684 - 36s - loss: 0.3234 - accuracy: 0.8987 - val_loss: 0.4132 - val_accuracy: 0.8762 - 36s/epoch - 53ms/step
+# Epoch 16/50
+# 684/684 - 36s - loss: 0.3148 - accuracy: 0.9041 - val_loss: 0.4190 - val_accuracy: 0.8726 - 36s/epoch - 53ms/step
+# Epoch 17/50
+# 684/684 - 37s - loss: 0.3040 - accuracy: 0.9086 - val_loss: 0.3950 - val_accuracy: 0.8854 - 37s/epoch - 54ms/step
+# Epoch 18/50
+# 684/684 - 37s - loss: 0.2990 - accuracy: 0.9115 - val_loss: 0.3971 - val_accuracy: 0.8857 - 37s/epoch - 54ms/step
+# Epoch 19/50
+# 684/684 - 37s - loss: 0.2933 - accuracy: 0.9127 - val_loss: 0.3916 - val_accuracy: 0.8850 - 37s/epoch - 54ms/step
+# Epoch 20/50
+# 684/684 - 37s - loss: 0.2897 - accuracy: 0.9132 - val_loss: 0.3922 - val_accuracy: 0.8874 - 37s/epoch - 54ms/step
+# Epoch 21/50
+# 684/684 - 37s - loss: 0.2826 - accuracy: 0.9148 - val_loss: 0.3805 - val_accuracy: 0.8897 - 37s/epoch - 55ms/step
+# Epoch 22/50
+# 684/684 - 37s - loss: 0.2812 - accuracy: 0.9160 - val_loss: 0.3985 - val_accuracy: 0.8854 - 37s/epoch - 55ms/step
+# Epoch 23/50
+# 684/684 - 37s - loss: 0.2711 - accuracy: 0.9222 - val_loss: 0.4051 - val_accuracy: 0.8879 - 37s/epoch - 55ms/step
+# Epoch 24/50
+# 684/684 - 38s - loss: 0.2687 - accuracy: 0.9216 - val_loss: 0.3831 - val_accuracy: 0.8929 - 38s/epoch - 55ms/step
+# 171/171 - 4s - loss: 0.3831 - accuracy: 0.8929 - 4s/epoch - 23ms/step
+# 171/171 [==============================] - 3s 18ms/step
+# Average score: 0.38307949900627136
+# Average accuracy: 0.8928506374359131
+# Confusion Matrix (Fold 1):
+# [[1484  217   90]
+#  [ 112 1643   71]
+#  [  38   58 1756]]
+#
+# Classification Report (Fold 1):
+#               precision    recall  f1-score   support
+#
+#     negative       0.91      0.83      0.87      1791
+#      neutral       0.86      0.90      0.88      1826
+#     positive       0.92      0.95      0.93      1852
+#
+#     accuracy                           0.89      5469
+#    macro avg       0.89      0.89      0.89      5469
+# weighted avg       0.89      0.89      0.89      5469
+#
+#
+# Overall Confusion Matrix:
+#  [[1484  217   90]
+#  [ 112 1643   71]
+#  [  38   58 1756]]
+# Overall Classification Report:
+#                precision    recall  f1-score   support
+#
+#     negative       0.91      0.83      0.87      1791
+#      neutral       0.86      0.90      0.88      1826
+#     positive       0.92      0.95      0.93      1852
+#
+#     accuracy                           0.89      5469
+#    macro avg       0.89      0.89      0.89      5469
+# weighted avg       0.89      0.89      0.89      5469
