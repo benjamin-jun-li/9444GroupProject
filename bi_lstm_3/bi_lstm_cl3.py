@@ -158,3 +158,97 @@ plt.xlabel('Predicted Label')
 plt.ylabel('True Label')
 plt.title('Overall Confusion Matrix')
 plt.show()
+
+
+# 684/684 - 36s - loss: 1.0975 - accuracy: 0.6310 - val_loss: 0.7541 - val_accuracy: 0.7212 - 36s/epoch - 53ms/step
+# Epoch 2/50
+# 684/684 - 35s - loss: 0.6901 - accuracy: 0.7433 - val_loss: 0.5903 - val_accuracy: 0.7906 - 35s/epoch - 51ms/step
+# Epoch 3/50
+# 684/684 - 35s - loss: 0.5752 - accuracy: 0.8000 - val_loss: 0.5471 - val_accuracy: 0.8069 - 35s/epoch - 51ms/step
+# Epoch 4/50
+# 684/684 - 35s - loss: 0.5155 - accuracy: 0.8235 - val_loss: 0.4971 - val_accuracy: 0.8287 - 35s/epoch - 51ms/step
+# Epoch 5/50
+# 684/684 - 35s - loss: 0.4735 - accuracy: 0.8404 - val_loss: 0.4787 - val_accuracy: 0.8382 - 35s/epoch - 51ms/step
+# Epoch 6/50
+# 684/684 - 35s - loss: 0.4415 - accuracy: 0.8528 - val_loss: 0.4528 - val_accuracy: 0.8501 - 35s/epoch - 51ms/step
+# Epoch 7/50
+# 684/684 - 36s - loss: 0.4200 - accuracy: 0.8596 - val_loss: 0.4498 - val_accuracy: 0.8541 - 36s/epoch - 53ms/step
+# Epoch 8/50
+# 684/684 - 36s - loss: 0.4086 - accuracy: 0.8675 - val_loss: 0.4334 - val_accuracy: 0.8546 - 36s/epoch - 53ms/step
+# Epoch 9/50
+# 684/684 - 36s - loss: 0.3857 - accuracy: 0.8722 - val_loss: 0.4216 - val_accuracy: 0.8576 - 36s/epoch - 53ms/step
+# Epoch 10/50
+# 684/684 - 36s - loss: 0.3755 - accuracy: 0.8801 - val_loss: 0.4175 - val_accuracy: 0.8603 - 36s/epoch - 53ms/step
+# Epoch 11/50
+# 684/684 - 36s - loss: 0.3611 - accuracy: 0.8839 - val_loss: 0.4136 - val_accuracy: 0.8669 - 36s/epoch - 53ms/step
+# Epoch 12/50
+# 684/684 - 36s - loss: 0.3490 - accuracy: 0.8896 - val_loss: 0.4183 - val_accuracy: 0.8649 - 36s/epoch - 52ms/step
+# Epoch 13/50
+# 684/684 - 36s - loss: 0.3423 - accuracy: 0.8924 - val_loss: 0.4010 - val_accuracy: 0.8685 - 36s/epoch - 53ms/step
+# Epoch 14/50
+# 684/684 - 36s - loss: 0.3341 - accuracy: 0.8953 - val_loss: 0.4051 - val_accuracy: 0.8713 - 36s/epoch - 53ms/step
+# Epoch 15/50
+# 684/684 - 36s - loss: 0.3232 - accuracy: 0.8993 - val_loss: 0.3993 - val_accuracy: 0.8769 - 36s/epoch - 53ms/step
+# Epoch 16/50
+# 684/684 - 37s - loss: 0.3215 - accuracy: 0.9043 - val_loss: 0.4121 - val_accuracy: 0.8720 - 37s/epoch - 54ms/step
+# Epoch 17/50
+# 684/684 - 36s - loss: 0.3067 - accuracy: 0.9073 - val_loss: 0.3922 - val_accuracy: 0.8777 - 36s/epoch - 53ms/step
+# Epoch 18/50
+# 684/684 - 36s - loss: 0.3004 - accuracy: 0.9077 - val_loss: 0.3911 - val_accuracy: 0.8795 - 36s/epoch - 53ms/step
+# Epoch 19/50
+# 684/684 - 37s - loss: 0.2923 - accuracy: 0.9139 - val_loss: 0.3881 - val_accuracy: 0.8828 - 37s/epoch - 54ms/step
+# Epoch 20/50
+# 684/684 - 37s - loss: 0.2886 - accuracy: 0.9160 - val_loss: 0.3986 - val_accuracy: 0.8843 - 37s/epoch - 54ms/step
+# Epoch 21/50
+# 684/684 - 37s - loss: 0.2802 - accuracy: 0.9195 - val_loss: 0.3973 - val_accuracy: 0.8813 - 37s/epoch - 54ms/step
+# Epoch 22/50
+# 684/684 - 37s - loss: 0.2763 - accuracy: 0.9201 - val_loss: 0.3860 - val_accuracy: 0.8916 - 37s/epoch - 54ms/step
+# Epoch 23/50
+# 684/684 - 37s - loss: 0.2729 - accuracy: 0.9215 - val_loss: 0.3886 - val_accuracy: 0.8907 - 37s/epoch - 54ms/step
+# Epoch 24/50
+# 684/684 - 37s - loss: 0.2643 - accuracy: 0.9262 - val_loss: 0.3725 - val_accuracy: 0.8923 - 37s/epoch - 54ms/step
+# Epoch 25/50
+# 684/684 - 37s - loss: 0.2608 - accuracy: 0.9272 - val_loss: 0.3741 - val_accuracy: 0.8947 - 37s/epoch - 54ms/step
+# Epoch 26/50
+# 684/684 - 37s - loss: 0.2531 - accuracy: 0.9305 - val_loss: 0.3712 - val_accuracy: 0.8987 - 37s/epoch - 54ms/step
+# Epoch 27/50
+# 684/684 - 37s - loss: 0.2499 - accuracy: 0.9301 - val_loss: 0.3770 - val_accuracy: 0.8938 - 37s/epoch - 53ms/step
+# Epoch 28/50
+# 684/684 - 37s - loss: 0.2471 - accuracy: 0.9342 - val_loss: 0.3802 - val_accuracy: 0.8961 - 37s/epoch - 53ms/step
+# Epoch 29/50
+# 684/684 - 36s - loss: 0.2420 - accuracy: 0.9334 - val_loss: 0.3744 - val_accuracy: 0.9002 - 36s/epoch - 53ms/step
+# 171/171 - 3s - loss: 0.3744 - accuracy: 0.9002 - 3s/epoch - 19ms/step
+# 171/171 [==============================] - 2s 13ms/step
+# Average score: 0.37443798780441284
+# Average accuracy: 0.9001645445823669
+# Confusion Matrix (Fold 1):
+# [[1495  244   81]
+#  [  92 1749   67]
+#  [  24   38 1679]]
+#
+# Classification Report (Fold 1):
+#               precision    recall  f1-score   support
+#
+#     negative       0.93      0.82      0.87      1820
+#      neutral       0.86      0.92      0.89      1908
+#     positive       0.92      0.96      0.94      1741
+#
+#     accuracy                           0.90      5469
+#    macro avg       0.90      0.90      0.90      5469
+# weighted avg       0.90      0.90      0.90      5469
+#
+#
+# Overall Confusion Matrix:
+#  [[1495  244   81]
+#  [  92 1749   67]
+#  [  24   38 1679]]
+# Overall Classification Report:
+#                precision    recall  f1-score   support
+#
+#     negative       0.93      0.82      0.87      1820
+#      neutral       0.86      0.92      0.89      1908
+#     positive       0.92      0.96      0.94      1741
+#
+#     accuracy                           0.90      5469
+#    macro avg       0.90      0.90      0.90      5469
+# weighted avg       0.90      0.90      0.90      5469
